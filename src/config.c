@@ -125,6 +125,9 @@ static void free_configuration(void) {
         FREE(barconfig->colors.inactive_workspace_border);
         FREE(barconfig->colors.inactive_workspace_bg);
         FREE(barconfig->colors.inactive_workspace_text);
+        FREE(barconfig->colors.inactive_focused_workspace_border);
+        FREE(barconfig->colors.inactive_focused_workspace_bg);
+        FREE(barconfig->colors.inactive_focused_workspace_text);
         FREE(barconfig->colors.urgent_workspace_border);
         FREE(barconfig->colors.urgent_workspace_bg);
         FREE(barconfig->colors.urgent_workspace_text);

@@ -897,6 +897,9 @@ static void dump_bar_config(yajl_gen gen, Barconfig *config) {
     YSTR_IF_SET(inactive_workspace_border);
     YSTR_IF_SET(inactive_workspace_bg);
     YSTR_IF_SET(inactive_workspace_text);
+    YSTR_IF_SET(inactive_focused_workspace_border);
+    YSTR_IF_SET(inactive_focused_workspace_bg);
+    YSTR_IF_SET(inactive_focused_workspace_text);
     YSTR_IF_SET(urgent_workspace_border);
     YSTR_IF_SET(urgent_workspace_bg);
     YSTR_IF_SET(urgent_workspace_text);

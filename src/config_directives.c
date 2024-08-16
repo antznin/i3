@@ -874,6 +874,7 @@ CFGFUN(bar_color, const char *colorclass, const char *border, const char *backgr
     APPLY_COLORS(focused_workspace);
     APPLY_COLORS(active_workspace);
     APPLY_COLORS(inactive_workspace);
+    APPLY_COLORS(inactive_focused_workspace);
     APPLY_COLORS(urgent_workspace);
     APPLY_COLORS(binding_mode);
 

@@ -709,6 +709,9 @@ inactive_workspace_text/inactive_workspace_bg/inactive_workspace_border::
 	Text/background/border color for a workspace button when the workspace
 	does not have focus and is not active (visible) on any output. This
 	will be the case for most workspaces.
+inactive_focused_workspace_text/inactive_focused_workspace_bg/inactive_focused_workspace_border::
+	Text/background/border color for a workspace button when the workspace
+	is not in focus but in the focused monitor.
 urgent_workspace_text/urgent_workspace_bg/urgent_workspace_border::
 	Text/background/border color for workspaces which contain at least one
 	window with the urgency hint set.

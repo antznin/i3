@@ -112,11 +112,12 @@ bar {
         focused_statusline #cccc00
         focused_separator  #0000cc
 
-        focused_workspace   #4c7899 #285577 #ffffff
-        active_workspace    #333333 #222222 #888888
-        inactive_workspace  #333333 #222222 #888888
-        urgent_workspace    #2f343a #900000 #ffffff
-        binding_mode        #abc123 #123abc #ababab
+        focused_workspace           #4c7899 #285577 #ffffff
+        active_workspace            #333333 #222222 #888888
+        inactive_workspace          #333333 #222222 #888888
+        inactive_focused_workspace  #333333 #222222 #888888
+        urgent_workspace            #2f343a #900000 #ffffff
+        binding_mode                #abc123 #123abc #ababab
     }
 
     # old syntax for compatibility with i3-gaps
@@ -172,6 +173,9 @@ is_deeply($bar_config->{colors},
         inactive_workspace_border => '#333333',
         inactive_workspace_text => '#888888',
         inactive_workspace_bg => '#222222',
+        inactive_focused_workspace_border => '#333333',
+        inactive_focused_workspace_text => '#888888',
+        inactive_focused_workspace_bg => '#222222',
         urgent_workspace_border => '#2f343a',
         urgent_workspace_text => '#ffffff',
         urgent_workspace_bg => '#900000',
@@ -376,10 +380,11 @@ bar {
         background #ff0000
         statusline   #00ff00
 
-        focused_workspace   #ffffff #285577
-        active_workspace    #888888 #222222
-        inactive_workspace  #888888 #222222
-        urgent_workspace    #ffffff #900000
+        focused_workspace          #ffffff #285577
+        active_workspace           #888888 #222222
+        inactive_workspace         #888888 #222222
+        inactive_focused_workspace #888888 #222222
+        urgent_workspace           #ffffff #900000
     }
 }
 EOT
@@ -414,6 +419,8 @@ is_deeply($bar_config->{colors},
         active_workspace_bg => '#222222',
         inactive_workspace_text => '#888888',
         inactive_workspace_bg => '#222222',
+        inactive_focused_workspace_text => '#888888',
+        inactive_focused_workspace_bg => '#222222',
         urgent_workspace_text => '#ffffff',
         urgent_workspace_bg => '#900000',
     }, '(old) colors ok');

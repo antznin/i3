@@ -397,6 +397,10 @@ struct Barconfig {
         char *inactive_workspace_bg;
         char *inactive_workspace_text;
 
+        char *inactive_focused_workspace_border;
+        char *inactive_focused_workspace_bg;
+        char *inactive_focused_workspace_text;
+
         char *urgent_workspace_border;
         char *urgent_workspace_bg;
         char *urgent_workspace_text;

@@ -101,6 +101,9 @@ struct xcb_colors_t {
     color_t focus_ws_bg;
     color_t focus_ws_fg;
     color_t focus_ws_border;
+    color_t inactive_focus_ws_bg;
+    color_t inactive_focus_ws_fg;
+    color_t inactive_focus_ws_border;
     color_t binding_mode_bg;
     color_t binding_mode_fg;
     color_t binding_mode_border;
@@ -469,6 +472,9 @@ void init_colors(const struct xcb_color_strings_t *new_colors) {
     PARSE_COLOR(focus_ws_fg, "#FFFFFF");
     PARSE_COLOR(focus_ws_bg, "#285577");
     PARSE_COLOR(focus_ws_border, "#4c7899");
+    PARSE_COLOR(inactive_focus_ws_fg, "#888888");
+    PARSE_COLOR(inactive_focus_ws_bg, "#222222");
+    PARSE_COLOR(inactive_focus_ws_border, "#333333");
 #undef PARSE_COLOR
 
 #define PARSE_COLOR_FALLBACK(name, fallback)                                                         \
@@ -2137,6 +2143,7 @@ void draw_bars(bool unhide) {
                 color_t fg_color = colors.inactive_ws_fg;
                 color_t bg_color = colors.inactive_ws_bg;
                 color_t border_color = colors.inactive_ws_border;
+                bool ws_output_has_focus = output_has_focus(ws_walk->output);
                 if (ws_walk->visible) {
                     if (!ws_walk->focused) {
                         fg_color = colors.active_ws_fg;
@@ -2147,6 +2154,10 @@ void draw_bars(bool unhide) {
                         bg_color = colors.focus_ws_bg;
                         border_color = colors.focus_ws_border;
                     }
+                } else if (ws_output_has_focus) {
+                    fg_color = colors.inactive_focus_ws_fg;
+                    bg_color = colors.inactive_focus_ws_bg;
+                    border_color = colors.inactive_focus_ws_border;
                 }
                 if (ws_walk->urgent) {
                     DLOG("WS %s is urgent!\n", i3string_as_utf8(ws_walk->name));

@@ -257,6 +257,9 @@ static int config_string_cb(void *params_, const unsigned char *val, size_t _len
     COLOR(inactive_workspace_border, inactive_ws_border);
     COLOR(inactive_workspace_bg, inactive_ws_bg);
     COLOR(inactive_workspace_text, inactive_ws_fg);
+    COLOR(inactive_focused_workspace_border, inactive_focus_ws_border);
+    COLOR(inactive_focused_workspace_bg, inactive_focus_ws_bg);
+    COLOR(inactive_focused_workspace_text, inactive_focus_ws_fg);
     COLOR(urgent_workspace_border, urgent_ws_border);
     COLOR(urgent_workspace_bg, urgent_ws_bg);
     COLOR(urgent_workspace_text, urgent_ws_fg);
@@ -478,6 +481,9 @@ void free_colors(struct xcb_color_strings_t *colors) {
     FREE_COLOR(focus_ws_fg);
     FREE_COLOR(focus_ws_bg);
     FREE_COLOR(focus_ws_border);
+    FREE_COLOR(inactive_focus_ws_fg);
+    FREE_COLOR(inactive_focus_ws_bg);
+    FREE_COLOR(inactive_focus_ws_border);
     FREE_COLOR(binding_mode_fg);
     FREE_COLOR(binding_mode_bg);
     FREE_COLOR(binding_mode_border);

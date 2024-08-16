@@ -41,6 +41,9 @@ struct xcb_color_strings_t {
     char *focus_ws_bg;
     char *focus_ws_fg;
     char *focus_ws_border;
+    char *inactive_focus_ws_bg;
+    char *inactive_focus_ws_fg;
+    char *inactive_focus_ws_border;
     char *urgent_ws_bg;
     char *urgent_ws_fg;
     char *urgent_ws_border;
